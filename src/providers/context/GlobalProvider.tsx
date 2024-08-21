@@ -1,6 +1,8 @@
-import { ConfigProvider, theme as antTheme } from 'antd'
+import { ConfigProvider } from 'antd'
 import ptBR from 'antd/locale/pt_BR'
-import React from 'react'
+import { ToastContainer } from 'react-toastify'
+
+import { AuthProvider } from '~/hooks/useAuth'
 
 interface Props {
   children?: React.ReactNode
@@ -8,17 +10,27 @@ interface Props {
 
 export const GlobalProvider: React.FC<Props> = ({ children }) => {
   return (
-    <ConfigProvider
-      locale={ptBR}
-      theme={{
-        components: {},
-        token: {
-          fontFamily: "'Noto Sans', sans-serif",
-          colorPrimary: '#001F3F'
-        }
-      }}
-    >
-      {children}
-    </ConfigProvider>
+    <>
+      <ToastContainer
+        hideProgressBar
+        position="bottom-left"
+        theme="colored"
+        autoClose={3000}
+      />
+      <AuthProvider>
+        <ConfigProvider
+          locale={ptBR}
+          theme={{
+            components: {},
+            token: {
+              fontFamily: "'Noto Sans', sans-serif",
+              colorPrimary: '#001F3F'
+            }
+          }}
+        >
+          {children}
+        </ConfigProvider>
+      </AuthProvider>
+    </>
   )
 }

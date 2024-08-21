@@ -1,5 +1,6 @@
 import '~/assets/styles/globals.css'
 import '~/assets/styles/custom.css'
+import 'react-toastify/dist/ReactToastify.css'
 
 import ReactDOM from 'react-dom/client'
 

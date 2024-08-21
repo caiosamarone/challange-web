@@ -23,6 +23,18 @@ export const Routes = () => {
           element: <Login />
         },
         {
+          path: '/create-account',
+          element: <div>create account</div>
+        },
+        {
+          path: '/admin',
+          element: (
+            <ProtectedRoute>
+              <div>Admin</div>
+            </ProtectedRoute>
+          )
+        },
+        {
           path: '/home',
           element: (
             <ProtectedRoute>

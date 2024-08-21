@@ -1,7 +1,7 @@
 /*General */
 a:hover {
-  color: #001f3f96; /* Cor do link ao passar o mouse sobre ele */
-  text-decoration: underline; /* Adicionar sublinhado ao passar o mouse sobre o link */
+  color: #001f3f96;
+  text-decoration: underline;
 }
 
 /* AntDesign */
