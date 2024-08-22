@@ -25,7 +25,7 @@ const AuthContext = createContext<AuthContextProps>({} as AuthContextProps)
 interface AuthProviderProps {
   children: React.ReactNode
 }
-interface IAuthProps extends Pick<IUser, 'name' | 'email' | 'id'> {
+export interface IAuthProps extends Pick<IUser, 'name' | 'email' | 'id'> {
   role: Role
 }
 
@@ -44,13 +44,16 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     setLoading(true)
     try {
       const { userId, name, permission } = await APIAuth.login(email, password)
-
-      setUser({
-        id: permission === 'USER' ? userId : 'ADMIN',
-        email: permission === 'USER' ? email : 'admin@admin.com',
-        name: permission === 'USER' ? name : 'ADMIN',
+      const loggedUser = {
+        id: userId,
+        email,
+        name,
         role: permission
-      })
+      } as IAuthProps
+      setUser(loggedUser)
+
+      localStorage.setItem('user', JSON.stringify(loggedUser))
+
       return permission
     } catch (er) {
       toast.error('Credenciais invalidas.')
@@ -62,6 +65,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
   const onLogout = () => {
     setUser(INITIAL_STATE)
+    localStorage.clear()
   }
 
   const context = {
