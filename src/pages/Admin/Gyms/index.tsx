@@ -1,12 +1,12 @@
-import { EditOutlined, PlusSquareOutlined } from '@ant-design/icons'
+import { EditOutlined } from '@ant-design/icons'
 import { Button, Card, Table, TableProps, Tooltip, Typography } from 'antd'
 import { useEffect } from 'react'
 
+import { useGyms } from '~/hooks/useGyms'
 import { IGym } from '~/interfaces'
 import { CurrentSelected } from '~/pages'
 
 import { GymForm } from './gym-form'
-import { useGyms } from './useGyms'
 
 interface GymsProps {
   onSelectCard: (selected: CurrentSelected) => void

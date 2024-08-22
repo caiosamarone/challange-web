@@ -15,7 +15,7 @@ export const useRoleValidation = () => {
       if (formatedUser.role === 'ADMIN') {
         return navigate('/admin')
       }
-      navigate('/home')
+      return navigate('/home')
     }
     navigate('/login')
   }, [])

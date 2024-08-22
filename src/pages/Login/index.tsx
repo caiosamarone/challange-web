@@ -13,6 +13,9 @@ export const Login = () => {
   const onSend = async (data) => {
     const { email, password } = data
     const role = await onLogin(email, password)
+    if (!role) {
+      return
+    }
     navigate(role === 'ADMIN' ? '/admin' : '/home')
   }
 
@@ -56,9 +59,6 @@ export const Login = () => {
           </Link>
 
           <Button htmlType="submit"> Entrar</Button>
-          {/* <Typography.Text className="font-normal font-poppins">
-       Testee
-     </Typography.Text> */}
         </div>
       </Form>
     </Container>

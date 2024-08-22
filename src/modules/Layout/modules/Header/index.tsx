@@ -14,10 +14,10 @@ export const Header = () => {
   }
 
   return (
-    <header className="min-h-12 bg-gray-50 py-6 px-20">
+    <header className="min-h-12 bg-gray-50 px-4 py-4 md:py-6 md:px-20">
       <div className="flex justify-between">
         <div className="flex flex-row items-center gap-4">
-          <Typography.Title level={4} className="font-poppins">
+          <Typography.Title level={4} className="font-poppins pl-4 md:pl-0">
             Checkfy
           </Typography.Title>
           <CheckCircleOutlined style={{ fontSize: '1.25rem' }} />
