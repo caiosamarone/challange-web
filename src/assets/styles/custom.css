@@ -11,3 +11,14 @@ a:hover {
 .ant-typography {
   margin-bottom: 0px !important;
 }
+.button,
+[type='submit'] {
+  background-color: #001f3f !important;
+  color: white;
+}
+
+.button:hover,
+[type='submit'] {
+  background-color: #001f3f !important;
+  color: white !important;
+}

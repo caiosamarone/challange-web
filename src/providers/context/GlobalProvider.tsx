@@ -21,7 +21,15 @@ export const GlobalProvider: React.FC<Props> = ({ children }) => {
         <ConfigProvider
           locale={ptBR}
           theme={{
-            components: {},
+            components: {
+              Button: {
+                borderRadius: 16,
+                borderRadiusSM: 16,
+                borderRadiusLG: 20,
+                primaryShadow: '0 2px 0 0 rgba(0, 0, 0, 0.02)',
+                primaryColor: 'white'
+              }
+            },
             token: {
               fontFamily: "'Noto Sans', sans-serif",
               colorPrimary: '#001F3F'

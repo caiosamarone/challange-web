@@ -2,7 +2,7 @@ import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom'
 
 import { Layout } from '~/modules'
 import { ProtectedRoute } from '~/modules/Routes/ProtectedRoute'
-import { Home, Login, NotAuthorized } from '~/pages'
+import { Admin, CreateAccount, Home, Login, NotAuthorized } from '~/pages'
 
 export const Routes = () => {
   const router = createBrowserRouter([
@@ -24,13 +24,13 @@ export const Routes = () => {
         },
         {
           path: '/create-account',
-          element: <div>create account</div>
+          element: <CreateAccount />
         },
         {
           path: '/admin',
           element: (
             <ProtectedRoute>
-              <div>Admin</div>
+              <Admin />
             </ProtectedRoute>
           )
         },

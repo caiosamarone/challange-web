@@ -1,4 +1,4 @@
-import { Button, Card } from 'antd'
+import { Card, Typography } from 'antd'
 import { useCallback, useLayoutEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 
@@ -9,6 +9,9 @@ export const Home = () => {
   const navigate = useNavigate()
 
   const validatePermission = useCallback(() => {
+    if (!user.id) {
+      navigate('/login')
+    }
     if (user.role === 'ADMIN') {
       navigate('/admin')
     }
@@ -25,7 +28,7 @@ export const Home = () => {
           minWidth: 400
         }}
       >
-        Home
+        <Typography.Title level={3}>Ola, {user.name}!</Typography.Title>
       </Card>
     </div>
   )
