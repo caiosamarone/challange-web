@@ -11,6 +11,15 @@ a:hover {
 .ant-typography {
   margin-bottom: 0px !important;
 }
+
+.ant-btn-primary {
+  background-color: #001f3f !important;
+}
+/* .ant-btn-default:hover {
+  border-color: #001f3f !important;
+  color: #001f3f !important;
+} */
+
 .button,
 [type='submit'] {
   background-color: #001f3f !important;

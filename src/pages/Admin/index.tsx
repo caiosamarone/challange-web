@@ -5,7 +5,7 @@ import { useState } from 'react'
 import { AdminCards, Container } from '~/components'
 
 import { Gyms } from './Gyms'
-import { Users } from './users'
+import { Users } from './User'
 
 export type CurrentSelected = 'GYMS' | 'USERS' | 'NONE'
 

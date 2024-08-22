@@ -17,7 +17,7 @@ export const getAllGyms = async () => {
 }
 
 export const updateGym = async (params: IGym.UpdateGymParams) => {
-  const { status } = await API.put(`${BASE_PATH}/${params.id}`, params.id)
+  const data = await API.put(`${BASE_PATH}/${params.id}`, params)
 
-  return status
+  return data.status
 }

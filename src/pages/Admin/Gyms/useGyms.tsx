@@ -37,12 +37,12 @@ export const useGyms = () => {
     }
   }
   const fetchUpdateGym = async (gym: IGym.UpdateGymParams) => {
-    console.log(gym, 'gym')
     try {
       const statusCode = await APIGym.updateGym(gym)
       if (statusCode === 204) {
         fetchGyms()
         toast.success('Academia editada com sucesso')
+        toggleModal()
       }
     } catch (error) {
       handleCatch(error)

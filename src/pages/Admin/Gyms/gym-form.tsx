@@ -20,7 +20,7 @@ export const GymForm = ({
 }: GymFormProps) => {
   const [form] = Form.useForm()
   const isAdd = !curItem
-  console.log(loading)
+
   useEffect(() => {
     if (curItem) {
       form.setFieldsValue({
