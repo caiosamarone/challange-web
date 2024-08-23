@@ -9,4 +9,4 @@ Barrels import
 
 TODO:
 Implementação do vitest para testes unitários
-Implementação de docker para rodar com imagem
+Implementação de docker para rodar com image
