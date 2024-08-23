@@ -15,7 +15,7 @@ export const Layout = () => {
   return (
     <div>
       <Header />
-      <div className="min-h-[calc(100vh+10px)] bg-[#001F3F]">
+      <div className="min-h-[calc(100vh-150px)] bg-[#001F3F]">
         <Outlet />
       </div>
       <Footer />

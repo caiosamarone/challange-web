@@ -7,11 +7,11 @@ export const AlreadyCheckIn = () => {
   const { user } = useAuth()
   return (
     <div>
-      <Typography.Title className="font-poppins">
+      <Typography.Title className="font-poppins" level={3}>
         Parece que você já fez check-in hoje!
       </Typography.Title>
       <div className="flex flex-col items-center gap-5 ">
-        <Typography.Title level={3}>
+        <Typography.Title level={4}>
           Te vejo amanhã, {handleFirstName(user.name)}!
         </Typography.Title>
         <img
