@@ -24,6 +24,7 @@ export const useGyms = () => {
       setLoading(false)
     }
   }
+
   const fetchCreateGym = async (gym: IGym.CreateGymParams) => {
     try {
       const statusCode = await APIGym.createGym(gym)

@@ -1,4 +1,3 @@
-export const TESTE_caio = ''
 import { DeleteOutlined } from '@ant-design/icons'
 import {
   Button,

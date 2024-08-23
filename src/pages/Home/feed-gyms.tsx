@@ -3,13 +3,16 @@ import { useEffect } from 'react'
 
 import { GymCard, GymSkeleton } from '~/components'
 import { useAuth } from '~/hooks/useAuth'
-import { useCheckIn } from '~/hooks/useCheckIn'
 import { useGyms } from '~/hooks/useGyms'
+import { handleFirstName } from '~/utils/user-first-name'
 
-export const FeedGyms = () => {
+interface FeedGymsProps {
+  makeCheckIn: (gymId: string, userId: string) => void
+}
+
+export const FeedGyms = ({ makeCheckIn }: FeedGymsProps) => {
   const { user } = useAuth()
   const { gyms, loading, fetchGyms } = useGyms()
-  const { makeCheckIn } = useCheckIn()
 
   useEffect(() => {
     fetchGyms()
@@ -27,7 +30,7 @@ export const FeedGyms = () => {
   return (
     <div>
       <Typography.Title level={3} className="font-poppins">
-        Olá, {user.name} 👋!
+        Olá, {handleFirstName(user.name)} 👋!
       </Typography.Title>
       <Typography.Title level={3} className="font-notosans">
         Você ainda não fez um Check-In hoje... Vamos realizar uma atividade?

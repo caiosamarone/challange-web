@@ -3,14 +3,20 @@ import { toast } from 'react-toastify'
 
 import { APICheckIn } from '~/api'
 import { handleCatch } from '~/utils/handle-catch'
+import { sleep } from '~/utils/sleep'
+
+type AlreadyCheckin = null | 'OK' | 'NONE'
 
 export const useCheckIn = () => {
   const [loading, setLoading] = useState(false)
+  const [alreadyCheckin, setAlreadyCheckin] = useState<AlreadyCheckin>(null)
 
   const makeCheckIn = async (gymId: string, userId: string) => {
     try {
-      const message = await APICheckIn.checkIn({ gymId, userId })
+      const { message } = await APICheckIn.checkIn({ gymId, userId })
+
       toast.success(message)
+      setAlreadyCheckin('OK')
     } catch (err) {
       handleCatch(err)
     }
@@ -19,8 +25,15 @@ export const useCheckIn = () => {
   const checkIfUserAlreadyCheckin = async (userId: string) => {
     try {
       setLoading(true)
-      const data = await APICheckIn.validateCheckInUser(userId)
-      return data
+      await sleep(1000)
+      const { checkIn } = await APICheckIn.validateCheckInUser(userId)
+
+      if (checkIn.id) {
+        setAlreadyCheckin('OK')
+      } else {
+        setAlreadyCheckin('NONE')
+      }
+      return checkIn
     } catch (err) {
       handleCatch(err)
     } finally {
@@ -31,6 +44,7 @@ export const useCheckIn = () => {
   return {
     makeCheckIn,
     checkIfUserAlreadyCheckin,
-    loading
+    loading,
+    alreadyCheckin
   }
 }

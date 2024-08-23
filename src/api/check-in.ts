@@ -13,7 +13,9 @@ export const checkIn = async (params: ICheckIn.ICheckInParams) => {
 }
 
 export const validateCheckInUser = async (userId: string) => {
-  const data = await API.get(`${BASE_PATH}/user/${userId}`)
+  const data = await API.get<ICheckIn.ICheckInSearchResponse>(
+    `${BASE_PATH}/user/${userId}`
+  )
 
   return data.data
 }

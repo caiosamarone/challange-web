@@ -18,7 +18,7 @@ export const Admin = () => {
   }
 
   return (
-    <Container minHeight={600} minWidth={750}>
+    <Container minHeight={600}>
       {currentSelected === 'NONE' && (
         <>
           <Typography.Title className="font-poppins text-center" level={3}>

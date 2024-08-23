@@ -1,4 +1,4 @@
-import { Button, Card, Form, Input, Typography } from 'antd'
+import { Button, Form, Input, Typography } from 'antd'
 import { Link, useNavigate } from 'react-router-dom'
 
 import { Container } from '~/components'

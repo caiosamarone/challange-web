@@ -1,5 +1,4 @@
-import { Button, Card, Form, Input, Typography } from 'antd'
-import { AxiosError } from 'axios'
+import { Button, Form, Input, Typography } from 'antd'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 
@@ -49,6 +48,10 @@ export const CreateAccount = () => {
               required: true,
               min: 3,
               message: 'Insira um nome válido'
+            },
+            {
+              max: 20,
+              message: 'O nome deve conter até 40 caracteres'
             }
           ]}
         >
@@ -74,6 +77,10 @@ export const CreateAccount = () => {
               required: true,
               min: 6,
               message: 'A senha deve conter ao menos 6 caracteres'
+            },
+            {
+              max: 20,
+              message: 'A senha deve conter até 20 caracteres'
             }
           ]}
         >

@@ -14,7 +14,7 @@ export const Container = ({
   minHeight
 }: ContainerParams) => {
   return (
-    <div className="grid place-content-center pt-[5rem]">
+    <div className="grid place-content-center px-7 md:px-0 pt-[5rem]">
       <Card
         title={title}
         bordered
