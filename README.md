@@ -49,6 +49,7 @@ O login é persistido atráves de local storage.
 - React.Js
 - Typescript
 - Antdesign
+- TailwindCSS
 
 ## Snapshots
 
